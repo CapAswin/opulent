@@ -4,7 +4,7 @@
   var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function navInit() {
-    var header = document.querySelector('.nav');
+    var header = document.querySelector('.site-header');
     var toggle = document.querySelector('.nav__toggle');
     var drawer = document.getElementById('nav-menu');
     if (!header || !toggle || !drawer) return;
@@ -138,7 +138,7 @@
   }
 
   function navScrollInit() {
-    var header = document.querySelector('.nav');
+    var header = document.querySelector('.site-header');
     if (!header || mqReduce.matches) return;
     if (!header.classList.contains('nav--solid')) return;
 
