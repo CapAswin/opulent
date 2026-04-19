@@ -41,9 +41,29 @@
         <ul class="nav__links">
           <li class="nav__links--lang"><a class="nav-top__lang-link" href="../solutions.html" hreflang="en" lang="en">English</a><span class="nav-top__lang-sep" aria-hidden="true">|</span><span class="nav-top__lang-item is-active" aria-current="true">العربية</span></li>
           <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">من نحن</a></li>
-          <li><a href="solutions.html" class="active">حلول الاستثمار</a></li>
-          <li><a href="portfolio.html">المحفظة</a></li>
+          <li class="nav__item--dropdown">
+            <a href="about.html" class="nav__link--dropdown-toggle">من نحن<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="about.html#foundation">من الرؤية إلى البنية</a></li>
+              <li><a href="about.html#pillars">الرؤوس الرأسية</a></li>
+            </ul>
+          </li>
+          <li class="nav__item--dropdown">
+            <a href="solutions.html" class="nav__link--dropdown-toggle active">حلول الاستثمار<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="solutions.html#short-term">12 إلى 18 شهراً</a></li>
+              <li><a href="solutions.html#mid-term">18+ إلى 24 شهراً</a></li>
+              <li><a href="solutions.html#long-term">24+ شهراً</a></li>
+            </ul>
+          </li>
+          <li class="nav__item--dropdown">
+            <a href="portfolio.html" class="nav__link--dropdown-toggle">المحفظة<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="portfolio.html#real-estate">تطويرات عقارية</a></li>
+              <li><a href="portfolio.html#hospitality">مشاريع الضيافة</a></li>
+              <li><a href="portfolio.html#luxury">احتيازات الراحة</a></li>
+            </ul>
+          </li>
           <li><a href="insights.html">الرؤى</a></li>
           <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
@@ -63,7 +83,7 @@
         <div class="nav-top__lang nav__lang" aria-label="Language">
           <a class="nav-top__lang-item nav-top__lang-link" href="../solutions.html" hreflang="en" lang="en">English</a>
           <span class="nav-top__lang-sep" aria-hidden="true">|</span>
-          <span class="nav-top__lang-item is-active" aria-current="true">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
+          <span class="nav-top__lang-item is-active" aria-current="true">العربية</span>
         </div>
       </div>
     </div>
@@ -87,7 +107,7 @@
 <section>
   <div class="container">
     <div class="grid-3">
-      <article class="card">
+      <article id="short-term" class="card">
         <span class="tag">المدى القصير</span>
         <h3>12 إلى 18 شهراً</h3>
         <p>تركيز على السيولة | مخاطر أقل | عوائد ثابتة / شبه ثابتة</p>
@@ -95,14 +115,14 @@
         <p>هنا تبرز الانضباط، لأن السرعة دون بنية تتحول إلى مخاطرة.</p>
         <div class="card__meta"><span>الأفق</span><strong>12 إلى 18 شهراً</strong></div>
       </article>
-      <article class="card">
+      <article id="mid-term" class="card">
         <span class="tag">المدى المتوسط</span>
         <h3>18+ إلى 24 شهراً</h3>
         <p>نمو متوازن | نموذج عوائد مختلط</p>
         <p>يمنح مرونة ويجمع بين الاستقرار والنمو، وهنا تتشكل المحافظ كمنظومة متوازنة.</p>
         <div class="card__meta"><span>الأفق</span><strong>18+ إلى 24 شهراً</strong></div>
       </article>
-      <article class="card">
+      <article id="long-term" class="card">
         <span class="tag">بناء الثروة طويل الأمد</span>
         <h3>24+ شهراً</h3>
         <p>خلق ثروة | مساهمات ملكية | ارتقاء في قيمة الأصول</p>

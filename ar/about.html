@@ -41,9 +41,29 @@
         <ul class="nav__links">
           <li class="nav__links--lang"><a class="nav-top__lang-link" href="../about.html" hreflang="en" lang="en">English</a><span class="nav-top__lang-sep" aria-hidden="true">|</span><span class="nav-top__lang-item is-active" aria-current="true">العربية</span></li>
           <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html" class="active">من نحن</a></li>
-          <li><a href="solutions.html">حلول الاستثمار</a></li>
-          <li><a href="portfolio.html">المحفظة</a></li>
+          <li class="nav__item--dropdown">
+            <a href="about.html" class="nav__link--dropdown-toggle active">من نحن<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="about.html#foundation">من الرؤية إلى البنية</a></li>
+              <li><a href="about.html#pillars">الرؤوس الرأسية</a></li>
+            </ul>
+          </li>
+          <li class="nav__item--dropdown">
+            <a href="solutions.html" class="nav__link--dropdown-toggle">حلول الاستثمار<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="solutions.html#short-term">12 إلى 18 شهراً</a></li>
+              <li><a href="solutions.html#mid-term">18+ إلى 24 شهراً</a></li>
+              <li><a href="solutions.html#long-term">24+ شهراً</a></li>
+            </ul>
+          </li>
+          <li class="nav__item--dropdown">
+            <a href="portfolio.html" class="nav__link--dropdown-toggle">المحفظة<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="portfolio.html#real-estate">تطويرات عقارية</a></li>
+              <li><a href="portfolio.html#hospitality">مشاريع الضيافة</a></li>
+              <li><a href="portfolio.html#luxury">احتيازات الراحة</a></li>
+            </ul>
+          </li>
           <li><a href="insights.html">الرؤى</a></li>
           <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
@@ -63,7 +83,7 @@
         <div class="nav-top__lang nav__lang" aria-label="Language">
           <a class="nav-top__lang-item nav-top__lang-link" href="../about.html" hreflang="en" lang="en">English</a>
           <span class="nav-top__lang-sep" aria-hidden="true">|</span>
-          <span class="nav-top__lang-item is-active" aria-current="true">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
+          <span class="nav-top__lang-item is-active" aria-current="true">العربية</span>
         </div>
       </div>
     </div>
@@ -84,7 +104,7 @@
   </div>
 </section>
 
-<section>
+<section id="foundation">
   <div class="container">
     <div class="split">
       <div class="split__media">
@@ -103,7 +123,7 @@
           الرحلة لم تكن خطية؛ بل طبقات: من الملاحظة إلى المشاركة، من المشاركة إلى التهيئة، من التهيئة إلى بناء نظام بيئي.
         </p>
         <p>تعمل مجموعة أوبولنت اليوم عبر:</p>
-        <ul class="pillars">
+        <ul id="pillars" class="pillars">
           <li><span class="num">01</span><div><strong>التسويق الاستراتيجي والنمو الرقمي</strong></div></li>
           <li><span class="num">02</span><div><strong>العقارات والاستثمارات المدعومة بأصول</strong></div></li>
           <li><span class="num">03</span><div><strong>قطاعات الأصول الفاخرة</strong></div></li>

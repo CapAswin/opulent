@@ -71,10 +71,14 @@ html[dir="rtl"] h4,
 html[dir="rtl"] h5,
 html[dir="rtl"] h6 {
   font-family: var(--font-base-ar);
+  letter-spacing: 0;
+  line-height: 1.4;
 }
 html[lang="ar"] body,
 html[dir="rtl"] body {
   font-family: var(--font-base-ar);
+  line-height: 1.8;
+  letter-spacing: 0;
 }
 h1 { font-size: clamp(2.15rem, 4.2vw, 3.25rem); font-weight: 500; letter-spacing: -0.035em; }
 h2 { font-size: clamp(1.65rem, 2.8vw, 2.25rem); font-weight: 500; letter-spacing: -0.03em; }
@@ -195,7 +199,7 @@ a.nav-top__lang-link:hover {
 .nav-main {
   background: var(--navy);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 0;
+  padding: 8px 0;
 }
 html[dir="rtl"] .nav-top__inner {
   flex-direction: row-reverse;
@@ -206,10 +210,6 @@ html[dir="rtl"] .nav__inner {
 html[dir="rtl"] .nav-top__quick {
   flex-direction: row-reverse;
 }
-html[dir="rtl"] .nav-top__lang {
-  flex-direction: row-reverse;
-}
-
 /* Inner pages: solid navy (main row) */
 .nav--solid .nav-main {
   background: var(--navy);
@@ -252,7 +252,7 @@ html[dir="rtl"] .nav-top__lang {
 }
 .nav__inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 24px;
+  gap: 14px;
 }
 .nav__drawer {
   flex: 1;
@@ -263,14 +263,15 @@ html[dir="rtl"] .nav-top__lang {
 .nav__actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   flex-shrink: 0;
 }
 .nav__lang {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-inline-start: 6px;
+  gap: 6px;
+  margin-inline-start: 2px;
+  flex-direction: row;
 }
 .nav__actions > .nav__lang:first-child {
   display: none;
@@ -317,14 +318,14 @@ html[dir="rtl"] .nav-top__lang {
   transform: translateY(-8px) rotate(-45deg);
 }
 .site-header.nav--scrolled .nav-main {
-  padding: 10px 0;
+  padding: 7px 0;
 }
 .site-header.nav--scrolled {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 .brand {
   font-size: 0.9rem; letter-spacing: 0.03em; font-weight: 600;
-  color: var(--navy); display: inline-flex; align-items: baseline; gap: 8px;
+  color: var(--navy); display: inline-flex; align-items: baseline; gap: 6px;
 }
 .brand .brand__mark {
   color: var(--navy-soft);
@@ -336,8 +337,12 @@ html[dir="rtl"] .nav-top__lang {
 .nav--hero .brand,
 .nav--hero .nav__links a { color: var(--navy); }
 .nav__links {
-  display: flex; gap: 28px; list-style: none;
+  display: flex; gap: 18px; list-style: none;
   font-size: .74rem; font-weight: 500;
+}
+.nav__links > li {
+  display: flex;
+  align-items: center;
 }
 .nav__actions .nav-top__lang-item,
 .nav__actions a.nav-top__lang-link {
@@ -371,9 +376,10 @@ html[dir="rtl"] .nav-top__lang {
 }
 
 .nav__link--dropdown-toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  line-height: 1;
 }
 
 .nav__dropdown-arrow {
@@ -402,6 +408,18 @@ html[dir="rtl"] .nav-top__lang {
   transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease), transform 0.3s var(--ease);
   z-index: 100;
   box-shadow: 0 12px 32px rgba(7, 36, 71, 0.12);
+}
+html[dir="rtl"] .nav__dropdown-arrow {
+  transform: rotate(90deg);
+}
+
+html[dir="rtl"] .nav__dropdown {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .nav__dropdown a {
+  text-align: right;
 }
 
 .nav__item--dropdown:hover .nav__dropdown {
@@ -485,6 +503,8 @@ html[dir="rtl"] .nav-top__lang {
 }
 .btn .arrow { transition: transform .3s var(--ease); }
 .btn:hover .arrow { transform: translateX(4px); }
+
+html[dir="rtl"] .btn:hover .arrow { transform: translateX(-4px); }
 
 .link-arrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -1082,6 +1102,8 @@ html[dir="rtl"] .section-toolbar {
 .form textarea { min-height: 160px; resize: vertical; }
 .form .btn { justify-self: start; }
 
+html[dir="rtl"] .form .btn { justify-self: end; }
+
 .contact-grid {
   display: grid; grid-template-columns: 1.2fr 1fr;
   gap: 80px; align-items: start;
@@ -1133,19 +1155,8 @@ html[dir="rtl"] .section-toolbar {
    RESPONSIVE
    ========================================================= */
 @media (max-width: 980px) {
-  .nav__dropdown {
-    position: static;
-    opacity: 0;
-    visibility: hidden;
-    transform: none;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    margin-top: 0;
-    position: relative;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s var(--ease), opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+  .nav__dropdown-arrow {
+    display: none;
   }
 
   .nav__item--dropdown:hover .nav__dropdown {
