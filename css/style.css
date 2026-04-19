@@ -273,8 +273,8 @@ html[dir="rtl"] .nav-top__quick {
   margin-inline-start: 2px;
   flex-direction: row;
 }
-.nav__actions > .nav__lang:first-child {
-  display: none;
+.nav__actions > .nav__lang {
+  display: inline-flex;
 }
 .nav__actions .nav-top__lang-item,
 .nav__actions a.nav-top__lang-link {
@@ -357,18 +357,6 @@ html[dir="rtl"] .nav-top__quick {
   height: 1px; background: var(--navy);
 }
 .nav__cta { display: inline-flex; }
-.nav__links--lang {
-  display: none;
-}
-.nav__links--lang .nav-top__lang-item.is-active {
-  color: rgba(255, 255, 255, 0.95);
-}
-.nav__links--lang a.nav-top__lang-link {
-  color: rgba(255, 255, 255, 0.85);
-}
-.nav__links--lang .nav-top__lang-sep {
-  color: rgba(255, 255, 255, 0.35);
-}
 
 /* Dropdown menus */
 .nav__item--dropdown {
@@ -410,7 +398,11 @@ html[dir="rtl"] .nav-top__quick {
   box-shadow: 0 12px 32px rgba(7, 36, 71, 0.12);
 }
 html[dir="rtl"] .nav__dropdown-arrow {
-  transform: rotate(90deg);
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .nav__item--dropdown:hover .nav__dropdown-arrow {
+  transform: scaleX(-1) rotate(180deg);
 }
 
 html[dir="rtl"] .nav__dropdown {
@@ -922,6 +914,16 @@ html[dir="rtl"] .section-toolbar {
   display: flex; flex-direction: column;
   min-height: 100%;
 }
+
+/* Keep in-page anchor targets visible beneath the fixed header */
+.card[id],
+.holding[id],
+.insight[id],
+section[id],
+article[id] {
+  scroll-margin-top: 132px;
+}
+
 .card:hover {
   border-color: rgba(7, 36, 71, 0.18);
   box-shadow: 0 12px 32px rgba(7, 36, 71, 0.05);
@@ -1219,24 +1221,6 @@ html[dir="rtl"] .form .btn { justify-self: end; }
 
   .nav__toggle { display: inline-flex; }
   .nav__lang { display: none; }
-  .nav__links--lang {
-    order: 0;
-    display: block;
-    width: 100%;
-    margin-inline-start: 0;
-    padding-inline-start: 0;
-    padding-bottom: 14px;
-    margin-bottom: 8px;
-    border-inline-start: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9375rem;
-  }
-  .nav__links--lang a,
-  .nav__links--lang .nav-top__lang-item {
-    width: auto;
-    padding: 0;
-    border-bottom: none;
-  }
   .brand,
   .nav__actions {
     position: relative;
