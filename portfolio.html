@@ -41,20 +41,50 @@
         <ul class="nav__links">
           <li class="nav__links--lang"><span class="nav-top__lang-item is-active" aria-current="true">English</span><span class="nav-top__lang-sep" aria-hidden="true">|</span><a class="nav-top__lang-link" href="ar/portfolio.html" hreflang="ar" lang="ar">العربية</a></li>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="solutions.html">Investment Solutions</a></li>
-          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li class="nav__item--dropdown">
+            <a href="about.html" class="nav__link--dropdown-toggle">About<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="about.html#foundation">From insight to infrastructure</a></li>
+              <li><a href="about.html#pillars">Our verticals</a></li>
+            </ul>
+          </li>
+          <li class="nav__item--dropdown">
+            <a href="solutions.html" class="nav__link--dropdown-toggle">Investment Solutions<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="solutions.html#short-term">12 to 18 months</a></li>
+              <li><a href="solutions.html#mid-term">18+ to 24 months</a></li>
+              <li><a href="solutions.html#long-term">24+ months</a></li>
+            </ul>
+          </li>
+          <li class="nav__item--dropdown">
+            <a href="portfolio.html" class="nav__link--dropdown-toggle active">Portfolio<span class="nav__dropdown-arrow" aria-hidden="true">▼</span></a>
+            <ul class="nav__dropdown">
+              <li><a href="portfolio.html#real-estate">Real estate developments</a></li>
+              <li><a href="portfolio.html#hospitality">Hospitality ventures</a></li>
+              <li><a href="portfolio.html#luxury">Luxury assets</a></li>
+            </ul>
+          </li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="nav__actions">
+        <div class="nav-top__lang nav__lang" aria-label="Language">
+          <span class="nav-top__lang-item is-active" aria-current="true">English</span>
+          <span class="nav-top__lang-sep" aria-hidden="true">|</span>
+          <a class="nav-top__lang-item nav-top__lang-link" href="ar/portfolio.html" hreflang="ar" lang="ar">Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©</a>
+        </div>
         <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
           <span class="nav__toggle-line" aria-hidden="true"></span>
           <span class="nav__toggle-line" aria-hidden="true"></span>
           <span class="nav__toggle-line" aria-hidden="true"></span>
         </button>
         <a href="contact.html" class="btn btn--ghost nav__cta">Investor Inquiry</a>
+        <div class="nav-top__lang nav__lang" aria-label="Language">
+          <span class="nav-top__lang-item is-active" aria-current="true">English</span>
+          <span class="nav-top__lang-sep" aria-hidden="true">|</span>
+          <a class="nav-top__lang-item nav-top__lang-link" href="ar/portfolio.html" hreflang="ar" lang="ar">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</a>
+        </div>
       </div>
     </div>
   </div>
@@ -79,15 +109,15 @@
       <span class="eyebrow">Active investments</span>
     </div>
     <div class="grid-3">
-      <article class="card">
+      <article id="real-estate" class="card">
         <span class="tag">01</span>
         <h3>Real estate developments</h3>
       </article>
-      <article class="card">
+      <article id="hospitality" class="card">
         <span class="tag">02</span>
         <h3>Hospitality ventures</h3>
       </article>
-      <article class="card">
+      <article id="luxury" class="card">
         <span class="tag">03</span>
         <h3>Luxury asset holdings</h3>
       </article>

@@ -3,6 +3,76 @@
 
   var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  function navDropdownInit() {
+    var dropdownItems = document.querySelectorAll('.nav__item--dropdown');
+    if (!dropdownItems.length) return;
+
+    var isMobile = function() {
+      return window.matchMedia('(max-width: 980px)').matches;
+    };
+
+    dropdownItems.forEach(function (item) {
+      var toggle = item.querySelector('.nav__link--dropdown-toggle');
+      var dropdown = item.querySelector('.nav__dropdown');
+      var links = dropdown ? dropdown.querySelectorAll('a') : [];
+
+      if (!toggle || !dropdown) return;
+
+      // Handle mouse enter/leave for desktop
+      item.addEventListener('mouseenter', function () {
+        if (isMobile()) return;
+        dropdown.style.opacity = '1';
+        dropdown.style.visibility = 'visible';
+        dropdown.style.transform = 'translateY(0)';
+      });
+
+      item.addEventListener('mouseleave', function () {
+        if (isMobile()) return;
+        dropdown.style.opacity = '0';
+        dropdown.style.visibility = 'hidden';
+        dropdown.style.transform = 'translateY(-8px)';
+      });
+
+      // Handle click for mobile
+      toggle.addEventListener('click', function (e) {
+        if (!isMobile()) return;
+        var isOpen = item.classList.contains('nav--dropdown-open');
+
+        if (isOpen) return;
+
+        e.preventDefault();
+        
+        // Close all other dropdowns
+        dropdownItems.forEach(function (otherItem) {
+          if (otherItem !== item) {
+            otherItem.classList.remove('nav--dropdown-open');
+          }
+        });
+
+        // Toggle current dropdown
+        item.classList.toggle('nav--dropdown-open');
+      });
+
+      // Close dropdown when a link is clicked
+      links.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (!isMobile()) {
+            dropdown.style.opacity = '0';
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.transform = 'translateY(-8px)';
+          }
+          item.classList.remove('nav--dropdown-open');
+          
+          var header = document.querySelector('.site-header');
+          if (header && header.classList.contains('nav--open')) {
+            header.classList.remove('nav--open');
+            document.body.classList.remove('nav-open');
+          }
+        });
+      });
+    });
+  }
+
   function navInit() {
     var header = document.querySelector('.site-header');
     var toggle = document.querySelector('.nav__toggle');
@@ -215,6 +285,7 @@
 
   function init() {
     navInit();
+    navDropdownInit();
     scrollRevealInit();
     barMeterInit();
     countUpInit();
