@@ -336,8 +336,8 @@ html[dir="rtl"] .nav-top__quick {
 .brand img {
   display: block;
   width: auto;
-  height: 52px;
-  max-width: 220px;
+  height: 60px;
+  max-width: 250px;
   object-fit: contain;
 }
 .brand .brand__mark {
