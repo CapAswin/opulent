@@ -87,7 +87,6 @@
 
 <section class="page-header" aria-labelledby="page-title-contact">
   <div class="container">
-    <div class="crumb">الرئيسية / اتصل بنا</div>
     <div class="page-header__title-row">
       <span class="page-header__rule" aria-hidden="true"></span>
       <h1 id="page-title-contact" class="page-header__headline">
@@ -126,16 +125,29 @@
           <div class="form__row">
             <div>
               <label for="amount">مبلغ الاستثمار</label>
-              <input id="amount" name="amount" type="text" inputmode="decimal" autocomplete="transaction-amount" placeholder="مثال: 250,000 درهم" required />
+              <input id="amount" name="amount" type="text" inputmode="decimal" autocomplete="transaction-amount" placeholder="مثال: 250,000" required />
             </div>
+            <div>
+              <label for="currency">العملة</label>
+              <select id="currency" name="currency" required>
+                <option value="" selected disabled>اختر العملة</option>
+                <option value="AED">AED</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="SAR">SAR</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__row">
             <div>
               <label for="country">الدولة</label>
               <input id="country" name="country" type="text" autocomplete="country-name" required />
             </div>
-          </div>
-          <div>
-            <label for="period">مدة الاستثمار</label>
-            <input id="period" name="investment_period" type="text" placeholder="مثال: 12–18 شهراً، 24+ شهراً" required />
+            <div>
+              <label for="period">مدة الاستثمار</label>
+              <input id="period" name="investment_period" type="text" placeholder="مثال: 12–18 شهراً، 24+ شهراً" required />
+            </div>
           </div>
           <button type="submit" class="btn">إرسال <span class="arrow">←</span></button>
         </form>
@@ -169,5 +181,3 @@
 <script src="../js/main.js" defer></script>
 </body>
 </html>
-
-
