@@ -186,11 +186,11 @@
           if (isNaN(target)) return;
 
           var start = performance.now();
-          var dur = 1100;
+          var dur = 1800;
 
           function tick(now) {
             var p = Math.min(1, (now - start) / dur);
-            var eased = 1 - Math.pow(1 - p, 3);
+            var eased = 1 - Math.pow(1 - p, 4.5);
             var val = Math.round(eased * target);
             el.textContent = val + suffix;
             if (p < 1) requestAnimationFrame(tick);

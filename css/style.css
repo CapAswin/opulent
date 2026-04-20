@@ -1140,8 +1140,10 @@ html[dir="rtl"] .card h3 {
 .footer a:hover { color: #ffffff; }
 .footer__brand p { color: rgba(255,255,255,0.6); margin-top: 14px; max-width: 360px; }
 .footer__brand .brand img {
-  height: 48px;
-  max-width: 220px;
+  width: auto;
+  height: 62px;
+  max-width: 285px;
+  object-fit: contain;
 }
 .footer .brand .brand__mark {
   color: rgba(255, 255, 255, 0.45);
