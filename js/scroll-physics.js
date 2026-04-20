@@ -8,15 +8,18 @@
   if (typeof Lenis === 'undefined') return;
 
   var lenis = new Lenis({
-    duration: 1.38,
+    duration: 1.7,
     easing: function (t) {
-      return 1 - Math.pow(1 - t, 3);
+      return 1 - Math.pow(1 - t, 4);
     },
     orientation: 'vertical',
     gestureOrientation: 'vertical',
     smoothWheel: true,
-    wheelMultiplier: 0.86,
-    touchMultiplier: 1.12,
+    wheelMultiplier: 0.72,
+    touchMultiplier: 0.98,
+    syncTouch: true,
+    syncTouchLerp: 0.08,
+    touchInertiaMultiplier: 1.1,
     infinite: false
   });
 
